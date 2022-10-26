@@ -4,9 +4,9 @@ import Draggable from "react-draggable";
 import "./styles.css";
 
 enum arrowsPath {
-  grid = "grid",
-  smooth = "smooth",
-  straight = "straight"
+  Grid = "grid",
+  Smooth = "smooth",
+  Straight = "straight",
 }
 
 //Style for the connector
@@ -14,7 +14,7 @@ const connectPointStyle = {
   position: "absolute",
   width: 15,
   height: 15,
-  background: "black"
+  background: "black",
 };
 //cards data
 export interface Card {
@@ -48,7 +48,7 @@ export const cardsData: Card[] = [
   { id: 7, title: "Carte 5", completionLevel: 10 },
   { id: 8, color: "#50BFD5", title: "Carte 6.1", completionLevel: 25 },
   { id: 9, color: "#FFE527", title: "Carte 6.2", completionLevel: 0 },
-  { id: 10, color: "#e51c23", title: "Carte de fin", completionLevel: 0 }
+  { id: 10, color: "#e51c23", title: "Carte de fin", completionLevel: 0 },
 ];
 //Position of the connector
 interface TopRight {
@@ -57,7 +57,7 @@ interface TopRight {
 }
 const topRight: TopRight = {
   right: 0,
-  top: 0
+  top: 0,
 };
 
 interface ConnectPointsWrapperProps {
@@ -68,7 +68,7 @@ interface ConnectPointsWrapperProps {
 const ConnectPointsWrapper = ({
   boxId,
   dragRef,
-  boxRef
+  boxRef,
 }: ConnectPointsWrapperProps) => {
   const ref1 = useRef();
 
@@ -81,7 +81,7 @@ const ConnectPointsWrapper = ({
         style={{
           ...connectPointStyle,
           ...topRight,
-          ...position
+          ...position,
         }}
         draggable
         onMouseDown={(e) => e.stopPropagation()}
@@ -97,7 +97,7 @@ const ConnectPointsWrapper = ({
             left: e.clientX - x - offsetLeft,
             top: e.clientY - y - offsetTop,
             transform: "none",
-            opacity: 0
+            opacity: 0,
           });
         }}
         ref={ref1}
@@ -117,7 +117,7 @@ const boxStyle = {
   border: "1px solid black",
   position: "flex",
   padding: "20px 10px",
-  height: "100px"
+  height: "100px",
 };
 
 const Box = ({ text, addArrow, setArrows, boxId }) => {
@@ -173,7 +173,7 @@ export default function XarrowComponent() {
       style={{
         display: "flex",
         justifyContent: "space-evenly",
-        height: 700
+        height: 700,
       }}
     >
       {/* map the data */}
